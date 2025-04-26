@@ -29,4 +29,26 @@ public class UserCRUD {
             return false;
         }
     }
+
+    public boolean createUser(String username, String password, String fullName, String email, String gender, int phonenumber) {
+        String sql = "INSERT INTO users_tbl (Username, Password, `Full Name`, Email, Gender, `Phone number`) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (
+                Connection conn = ConnectDB.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, fullName);
+            pstmt.setString(4, email);
+            pstmt.setString(5, gender);
+            pstmt.setInt(6, phonenumber);
+
+            int affectedRows = pstmt.executeUpdate();
+            return affectedRows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
