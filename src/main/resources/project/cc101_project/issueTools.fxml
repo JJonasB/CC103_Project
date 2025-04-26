@@ -133,13 +133,13 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Button layoutX="930.0" layoutY="596.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="295.0" style="-fx-background-color: #a0c878; -fx-background-radius: 1em;" text="Issue Tool" textFill="WHITE">
+      <Button layoutX="930.0" layoutY="596.0" mnemonicParsing="false" onAction="#handleIssueTool" prefHeight="78.0" prefWidth="295.0" style="-fx-background-color: #a0c878; -fx-background-radius: 1em;" text="Issue Tool" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS" size="37.0" />
          </font>
       </Button>
-      <DatePicker layoutX="1031.0" layoutY="530.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 25em;" />
-      <DatePicker layoutX="1030.0" layoutY="440.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 2em;" />
+      <DatePicker fx:id="returnDatePicker" layoutX="1031.0" layoutY="530.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 25em;" />
+      <DatePicker fx:id="issueDatePicker" layoutX="1030.0" layoutY="440.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 2em;" />
       <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Click_BackBTN" onMouseClicked="#Click_BackBTN" prefHeight="59.0" prefWidth="97.0" style="-fx-background-color: #a0c878;" text="Back" textFill="#efefef">
          <font>
             <Font size="19.0" />
@@ -150,7 +150,7 @@
             <Image url="@../../imgs/3114883.png" />
          </image>
       </ImageView>
-      <TextField layoutX="1020.0" layoutY="250.0" opacity="0.84" prefHeight="26.0" prefWidth="211.0" style="-fx-background-radius: 3em;" />
-      <TextField layoutX="1026.0" layoutY="345.0" opacity="0.85" prefHeight="26.0" prefWidth="205.0" style="-fx-background-radius: 3em;" />
+      <TextField fx:id="toolIdField" layoutX="1020.0" layoutY="250.0" opacity="0.84" prefHeight="26.0" prefWidth="211.0" style="-fx-background-radius: 3em;" />
+      <TextField fx:id="studentIdField" layoutX="1026.0" layoutY="345.0" opacity="0.85" prefHeight="26.0" prefWidth="205.0" style="-fx-background-radius: 3em;" />
    </children>
 </AnchorPane>

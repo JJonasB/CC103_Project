@@ -28,7 +28,7 @@ public class HomepageController {
     @FXML
     private void issueToolsBTN_clicked() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("manageTools.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("issueTools.fxml"));
             Stage stage = (Stage) welcomeText.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -88,4 +88,6 @@ public class HomepageController {
             e.printStackTrace();
         }
     }
+
+
 }

@@ -5,6 +5,7 @@
       <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
       <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
     </inspection_tool>
+    <inspection_tool class="OptionalOfNullableMisuse" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="SpellCheckingInspection" enabled="true" level="INFORMATION" enabled_by_default="true">
       <option name="processCode" value="true" />
       <option name="processLiterals" value="true" />
