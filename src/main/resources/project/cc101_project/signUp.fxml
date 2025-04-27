@@ -31,38 +31,50 @@
       </AnchorPane>
       <AnchorPane layoutX="347.0" layoutY="146.0" prefHeight="522.0" prefWidth="599.0" style="-fx-background-color: #a0c878; -fx-background-radius: 3em;">
          <children>
-            <Button layoutX="182.0" layoutY="438.0" mnemonicParsing="false" onAction="#Click_SignUpBTN" prefHeight="52.0" prefWidth="234.0" style="-fx-background-color: #7b9a5e; -fx-background-radius: 1em;" text="Sign Up" textFill="WHITE">
+            <Button layoutX="182.0" layoutY="438.0" mnemonicParsing="false" onAction="#Click_SignUpBTN" prefHeight="40.0" prefWidth="234.0" style="-fx-background-color: #7b9a5e; -fx-background-radius: 1em;" text="Sign Up" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="firstNameField" layoutX="33.0" layoutY="42.0" prefHeight="50.0" prefWidth="256.0" promptText="First Name" style="-fx-background-radius: 1em;">
+            <TextField fx:id="firstNameField" layoutX="33.0" layoutY="42.0" prefHeight="40.0" prefWidth="256.0" promptText="First Name" style="-fx-background-radius: 1em;">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="lastNameField" layoutX="317.0" layoutY="41.0" prefHeight="50.0" prefWidth="256.0" promptText="Last Name" style="-fx-background-radius: 1em;">
+            <TextField fx:id="lastNameField" layoutX="317.0" layoutY="41.0" prefHeight="40.0" prefWidth="256.0" promptText="Last Name" style="-fx-background-radius: 1em;">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="emailOrUsernameField" layoutX="33.0" layoutY="116.0" prefHeight="50.0" prefWidth="539.0" promptText="Email Or Username" style="-fx-background-radius: 1em;">
+            <TextField fx:id="emailOrUsernameField" layoutX="32.0" layoutY="90.0" prefHeight="40.0" prefWidth="539.0" promptText="Email Or Username" style="-fx-background-radius: 1em;">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <RadioButton fx:id="maleRadio" alignment="CENTER_RIGHT" layoutX="99.0" layoutY="196.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" text="Male">
+            <RadioButton fx:id="maleRadio" alignment="CENTER_RIGHT" layoutX="100.0" layoutY="138.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" text="Male">
                <toggleGroup>
                   <ToggleGroup fx:id="Gender1" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="femaleRadio" alignment="CENTER_RIGHT" layoutX="240.0" layoutY="196.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="42.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" text="Female" toggleGroup="$Gender1" />
-            <PasswordField fx:id="passwordField" layoutX="36.0" layoutY="312.0" prefHeight="44.0" prefWidth="531.0" promptText="Enter Password" style="-fx-background-radius: 1em;" />
-            <PasswordField fx:id="confirmPasswordField" layoutX="36.0" layoutY="371.0" prefHeight="44.0" prefWidth="531.0" promptText="Re-enter Password" style="-fx-background-radius: 1em;" />
-            <Text layoutX="45.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " />
+            <RadioButton fx:id="femaleRadio" alignment="CENTER_RIGHT" layoutX="241.0" layoutY="138.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" text="Female" toggleGroup="$Gender1" />
+            <PasswordField fx:id="passwordField" layoutX="33.0" layoutY="241.0" prefHeight="40.0" prefWidth="531.0" promptText="Enter Password" style="-fx-background-radius: 1em;" />
+            <PasswordField fx:id="confirmPasswordField" layoutX="33.0" layoutY="290.0" prefHeight="40.0" prefWidth="531.0" promptText="Re-enter Password" style="-fx-background-radius: 1em;" />
+            <Text layoutX="46.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " />
             <Line endX="434.4666748046875" layoutX="132.0" layoutY="428.0" startX="-100.0" />
             <Text fx:id="errorText" layoutX="46.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <TextField fx:id="phoneField" layoutX="36.0" layoutY="252.0" prefHeight="42.0" prefWidth="531.0" promptText="Enter Phone Number" style="-fx-background-radius: 1em;" />
+            <TextField fx:id="phoneField" layoutX="36.0" layoutY="189.0" prefHeight="40.0" prefWidth="531.0" promptText="Enter Phone Number" style="-fx-background-radius: 1em;" />
+            <Label layoutX="32.0" layoutY="342.0" prefHeight="40.0" prefWidth="226.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" text="Is Student?" />
+            <RadioButton fx:id="yesRadio" layoutX="102.0" layoutY="353.0" mnemonicParsing="false" text="Yes">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isStudent" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="noRadio" layoutX="196.0" layoutY="353.0" mnemonicParsing="false" text="No" toggleGroup="$isStudent" />
+            <TextField fx:id="yearAndCourse" layoutX="273.0" layoutY="342.0" prefHeight="40.0" prefWidth="256.0" promptText="Year &amp; Course" style="-fx-background-radius: 1em;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
       <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Click_BackBTN" onMouseClicked="#Click_BackBTN" prefHeight="59.0" prefWidth="97.0" style="-fx-background-color: #a0c878;" text="Back" textFill="#efefef">
