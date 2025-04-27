@@ -49,14 +49,14 @@
       </AnchorPane>
       <AnchorPane layoutY="153.0" prefHeight="571.0" prefWidth="1280.0" style="-fx-background-color: #a6a6a699;">
          <children>
-            <TableView prefHeight="571.0" prefWidth="1280.0" style="-fx-background-color: #a0c87810; -fx-text-fill: #fff;">
+            <TableView fx:id="recordsTable" prefHeight="571.0" prefWidth="1280.0" style="-fx-background-color: #a0c87810; -fx-text-fill: #fff;">
               <columns>
-                <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878; -fx-text-fill: #FF0000;" text="Issue ID" />
-                <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Tool Name" />
-                  <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Issue Date" />
-                  <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Due Date" />
-                  <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Status" />
-                  <TableColumn prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Student Name" />
+                <TableColumn fx:id="colIssueID" prefWidth="213.0" style="-fx-background-color: #a0c878; -fx-text-fill: #FF0000;" text="Issue ID" />
+                <TableColumn fx:id="colToolName" prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Tool Name" />
+                  <TableColumn fx:id="colIssueDate" prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Issue Date" />
+                  <TableColumn fx:id="colDueDate" prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Due Date" />
+                  <TableColumn fx:id="colStatus" prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Status" />
+                  <TableColumn fx:id="colStudentName" prefWidth="213.0" style="-fx-background-color: #a0c878;" text="Student Name" />
               </columns>
             </TableView>
          </children>

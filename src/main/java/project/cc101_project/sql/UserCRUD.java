@@ -7,6 +7,14 @@ import java.sql.SQLException;
 
 public class UserCRUD {
 
+    public static ResultSet getUserByUsername(String username) throws SQLException {
+        String sql = "SELECT ID, `Full Name`, IsStudent FROM users_tbl WHERE Username = ?";
+        Connection conn = ConnectDB.connect();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, username);
+        return pstmt.executeQuery();
+    }
+
     public boolean validateUser(String username, String password) {
         String sql = "SELECT * FROM users_tbl WHERE Username = ? AND Password = ?";
 
