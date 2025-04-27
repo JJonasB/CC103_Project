@@ -6,6 +6,7 @@ module project.cc101_project {
     requires java.sql;
     requires java.compiler;
 
+    opens project.cc101_project.sql to javafx.base;
     opens project.cc101_project to javafx.fxml;
     exports project.cc101_project;
 }

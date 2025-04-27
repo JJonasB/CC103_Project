@@ -23,7 +23,7 @@ public class MaintenanceAndReportController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // This will print the error details to the console
+            e.printStackTrace();
         }
     }
 }

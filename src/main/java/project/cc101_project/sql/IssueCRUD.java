@@ -1,9 +1,13 @@
 package project.cc101_project.sql;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.time.LocalDate;
 
 public class IssueCRUD {
+
     public static boolean issueTool(int toolId, int userID, LocalDate issueDate, LocalDate dueDate) throws SQLException {
         Connection conn = ConnectDB.connect();
         String insertSql = "INSERT INTO issued_tools_tbl (ToolID, UserID, IssueDate, DueDate) VALUES (?, ?, ?, ?)";
@@ -12,7 +16,6 @@ public class IssueCRUD {
         try {
             conn.setAutoCommit(false);
 
-            // Insert issuance record
             try (PreparedStatement pstmt = conn.prepareStatement(insertSql)) {
                 pstmt.setInt(1, toolId);
                 pstmt.setInt(2, userID);
@@ -34,5 +37,31 @@ public class IssueCRUD {
         } finally {
             conn.setAutoCommit(true);
         }
+    }
+
+    public static ObservableList<IssuedToolRecord> getAllIssuedRecords() throws SQLException {
+        ObservableList<IssuedToolRecord> records = FXCollections.observableArrayList();
+
+        String sql = "SELECT i.IssueID, t.ToolName, i.IssueDate, i.DueDate, i.Status, u.`Full Name` " +
+                "FROM issued_tools_tbl i " +
+                "JOIN tools_tbl t ON i.ToolID = t.ToolID " +
+                "JOIN users_tbl u ON i.UserID = u.ID";
+
+        try (Connection conn = ConnectDB.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                records.add(new IssuedToolRecord(
+                        rs.getInt("IssueID"),
+                        rs.getString("ToolName"),
+                        rs.getDate("IssueDate").toLocalDate(),
+                        rs.getDate("DueDate").toLocalDate(),
+                        rs.getString("Status"),
+                        rs.getString("Full Name")
+                ));
+            }
+        }
+        return records;
     }
 }

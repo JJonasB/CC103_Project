@@ -6,12 +6,25 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import project.cc101_project.sql.CurrentUser;
 
 import java.io.IOException;
 
 public class HomepageController {
+    @FXML private Label welcomeText;
+    @FXML private Label IDLabel;
+    @FXML private Label fullNameLabel;
+    @FXML private Label IsStudentLabel;
+
+
     @FXML
-    private Label welcomeText;
+    public void initialize() {
+        // Load current user data
+        CurrentUser currentUser = CurrentUser.getInstance();
+        IDLabel.setText(String.valueOf(currentUser.getId()));
+        fullNameLabel.setText(currentUser.getFullName());
+        IsStudentLabel.setText(currentUser.isStudent() ? "Yes" : "No");
+    }
 
     @FXML
     private void returnToolsBTN_clicked() {
@@ -22,7 +35,7 @@ public class HomepageController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // This will print the error details to the console
+            e.printStackTrace();
         }
     }
     @FXML
