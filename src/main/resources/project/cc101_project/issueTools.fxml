@@ -46,17 +46,17 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="toolID_ans" layoutX="279.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolID_ans" layoutX="279.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="toolName_ans" layoutX="279.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolName_ans" layoutX="279.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="toolQuantity_ans" layoutX="279.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolQuantity_ans" layoutX="279.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
@@ -91,17 +91,17 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="studentID_ans" layoutX="274.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentID_ans" layoutX="274.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="studentName_ans" layoutX="274.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentName_ans" layoutX="274.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="studentCourse_ans" layoutX="274.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentCourse_ans" layoutX="274.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;">
                <font>
                   <Font size="23.0" />
                </font>
