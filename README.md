@@ -1,7 +1,7 @@
 Currently this project is in-progress.
 A lot of features are hard to implement and the code is a mess but it works.
 
-Alot of searching and trial and error within. And some features are working yet there's some things I still do not understand.
+A lot of searching and trial and error within. And some features are working yet there's some things I still do not understand.
 Note that all of the functionality is being handled by 1 person and the javafx interface was created by only 2 people.
 The more progress that this project do, the more that I need to review how and why this works.
 
