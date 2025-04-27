@@ -21,7 +21,7 @@ public class ManageToolsController {
     @FXML private TextField toolLocation_Txtfld;
     @FXML private TableView<Tool> toolsTable;
 
-    // Initialize Table and ChoiceBox
+    //Initialize
     @FXML
     public void initialize() {
         setupConditionChoices();
@@ -57,7 +57,7 @@ public class ManageToolsController {
         toolLocation_Txtfld.setText(tool.getLocation());
     }
 
-    // Add Tool (updated for ChoiceBox)
+    // Add Tool
     @FXML
     private void handleAddTool() {
         try {
@@ -82,7 +82,7 @@ public class ManageToolsController {
         }
     }
 
-    // Update Tool (updated for ChoiceBox)
+    // Update Tool
     @FXML
     private void handleUpdateTool() {
         Tool selected = toolsTable.getSelectionModel().getSelectedItem();
@@ -94,7 +94,6 @@ public class ManageToolsController {
         try {
             String name = toolName_Txtfld.getText().trim();
             String condition = toolCondition_ChoiceBox.getValue();
-            System.out.println(toolCondition_ChoiceBox.getValue());
             int quantity = Integer.parseInt(toolQuantity_Txtfld.getText().trim());
             String location = toolLocation_Txtfld.getText().trim();
 

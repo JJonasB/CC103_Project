@@ -46,17 +46,17 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="279.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolID_ans" layoutX="279.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="279.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolName_ans" layoutX="279.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="279.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="toolQuantity_ans" layoutX="279.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
@@ -91,17 +91,17 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="274.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentID_ans" layoutX="274.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="274.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentName_ans" layoutX="274.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="274.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
+            <Text fx:id="studentCourse_ans" layoutX="274.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Answer">
                <font>
                   <Font size="23.0" />
                </font>
@@ -139,7 +139,7 @@
          </font>
       </Button>
       <DatePicker fx:id="returnDatePicker" layoutX="1031.0" layoutY="530.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 25em;" />
-      <DatePicker fx:id="issueDatePicker" layoutX="1030.0" layoutY="440.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 2em;" />
+      <DatePicker fx:id="issueDatePicker" layoutX="1031.0" layoutY="453.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-radius: 2em;" />
       <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Click_BackBTN" onMouseClicked="#Click_BackBTN" prefHeight="59.0" prefWidth="97.0" style="-fx-background-color: #a0c878;" text="Back" textFill="#efefef">
          <font>
             <Font size="19.0" />

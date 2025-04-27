@@ -56,5 +56,29 @@ public class ToolsCRUD {
             throw new RuntimeException(e);
         }
     }
-    
+    public static boolean isToolAvailable(int toolId) throws SQLException {
+        String sql = "SELECT Status FROM tools_tbl WHERE ToolID = ?";
+        try (Connection conn = ConnectDB.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, toolId);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next() && rs.getString("Status").equals("Available");
+        }
+    }
+
+    public static ResultSet getToolByID(int toolID) throws SQLException {
+        String sql = "SELECT * FROM tools_tbl WHERE ToolID = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, toolID);
+        return stmt.executeQuery();
+    }
+
+    public static boolean doesToolExist(int toolID) throws SQLException {
+        String sql = "SELECT ToolID FROM tools_tbl WHERE ToolID = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, toolID);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next();
+        }
+    }
 }

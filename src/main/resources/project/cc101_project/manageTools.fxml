@@ -114,25 +114,35 @@
             <Font name="Comic Sans MS" size="29.0" />
          </font>
       </Label>
-      <TableView fx:id="toolsTable" layoutX="603.0" layoutY="168.0" prefHeight="515.0" prefWidth="618.0" style="-fx-background-color: #a6a6a6aa;">
+      <TableView fx:id="toolsTable" layoutX="508.0" layoutY="166.0" prefHeight="515.0" prefWidth="746.0" style="-fx-background-color: #a6a6a6aa;">
         <columns>
-           <TableColumn prefWidth="150.13330078125" style="-fx-background-color: #a0c878; -fx-font-size: 15px; -fx-text-fill: #f00;" text="Tool">
+            <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px; -fx-text-fill: #f00;" text="ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="toolID" />
+               </cellValueFactory>
+            </TableColumn>
+           <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px; -fx-text-fill: #f00;" text="Tool">
               <cellValueFactory>
                  <PropertyValueFactory property="name" />
               </cellValueFactory></TableColumn>
-           <TableColumn prefWidth="157.86669921875" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Status">
+           <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Condition">
               <cellValueFactory>
-                 <PropertyValueFactory property="status" />
+                 <PropertyValueFactory property="Condition" />
               </cellValueFactory>
            </TableColumn>
-            <TableColumn prefWidth="151.19989013671875" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Quantity">
+            <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Quantity">
            <cellValueFactory>
               <PropertyValueFactory property="quantity" />
            </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="161.60003662109375" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Location">
+            <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Location">
            <cellValueFactory>
               <PropertyValueFactory property="location" />
+           </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="124.3" style="-fx-background-color: #a0c878; -fx-font-size: 15px;" text="Status" >
+           <cellValueFactory>
+              <PropertyValueFactory property="status" />
            </cellValueFactory>
             </TableColumn>
         </columns>

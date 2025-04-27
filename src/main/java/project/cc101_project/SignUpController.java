@@ -21,8 +21,25 @@ public class SignUpController {
     @FXML PasswordField confirmPasswordField;
     @FXML ToggleGroup Gender1;
     @FXML Text errorText;
+    @FXML private ToggleGroup isStudent;
+    @FXML private TextField yearAndCourse;
+    @FXML private RadioButton yesRadio;
+    @FXML private RadioButton noRadio;
 
     UserCRUD userCRUD = new UserCRUD();
+
+    @FXML
+    public void initialize() {
+        // Hide year/course initially
+        yearAndCourse.setVisible(false);
+
+        // Add listener to student toggle group
+        isStudent.selectedToggleProperty().addListener((obs, oldVal, newVal) -> {
+            boolean isStudent = yesRadio.isSelected();
+            yearAndCourse.setVisible(isStudent);
+            if (!isStudent) yearAndCourse.clear();
+        });
+    }
 
     @FXML
     private void Click_BackBTN() {
@@ -39,30 +56,48 @@ public class SignUpController {
 
     @FXML
     private void Click_SignUpBTN() {
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
-        String emailUsername = emailOrUsernameField.getText();
-        String password = passwordField.getText();
-        String confirmPassword = confirmPasswordField.getText();
+        String firstName = firstNameField.getText().trim();
+        String lastName = lastNameField.getText().trim();
+        String emailUsername = emailOrUsernameField.getText().trim();
+        String password = passwordField.getText().trim();
+        String confirmPassword = confirmPasswordField.getText().trim();
         String gender = getRadioAnswers(Gender1);
-        String phoneNumber = phoneField.getText();
+        String phoneNumber = phoneField.getText().trim();
+        boolean isStudent = yesRadio.isSelected();
+        String yearCourse = yearAndCourse.getText().trim();
 
-        System.out.println(gender);
-
+        // Validation
         if (anyEmptyField(firstName, lastName, emailUsername, password, confirmPassword, gender, phoneNumber)) {
-            errorText.setText("Please fill all fields");
+            errorText.setText("Please fill all required fields!");
             return;
         }
+
+        if (isStudent && yearCourse.isEmpty()) {
+            errorText.setText("Year & Course is required for students!");
+            return;
+        }
+
         if (!password.equals(confirmPassword)) {
             errorText.setText("Passwords do not match!");
             return;
         }
 
-        if (userCRUD.createUser(emailUsername, password, firstName + " " + lastName, emailUsername, gender, Integer.parseInt(phoneNumber))) {
+        // Create user with student info
+        if (userCRUD.createUser(emailUsername, password,
+                firstName + " " + lastName, emailUsername, gender,
+                Integer.parseInt(phoneNumber), isStudent, yearCourse)) {
             errorText.setText("Registration Successful!");
+            clearFields();
         } else {
             errorText.setText("Registration Failed, Username may be taken");
         }
+    }
+
+    private void clearFields() {
+        // Add these lines
+        yesRadio.setSelected(false);
+        noRadio.setSelected(false);
+        yearAndCourse.clear();
     }
 
     boolean anyEmptyField(String... fields) {

@@ -30,27 +30,46 @@ public class UserCRUD {
         }
     }
 
-    public boolean createUser(String username, String password, String fullName, String email, String gender, int phonenumber) {
-        String sql = "INSERT INTO users_tbl (Username, Password, `Full Name`, Email, Gender, `Phone number`) VALUES (?, ?, ?, ?, ?, ?)";
+    public boolean createUser(String username, String password, String fullName,
+                              String email, String gender, int phonenumber,
+                              boolean isStudent, String yearAndCourse) {
+        String sql = "INSERT INTO users_tbl (Username, Password, `Full Name`, Email, " +
+                "Gender, `Phone number`, IsStudent, YearAndCourse) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (
-                Connection conn = ConnectDB.connect();
-                PreparedStatement pstmt = conn.prepareStatement(sql)
-        ) {
+        try (Connection conn = ConnectDB.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
             pstmt.setString(1, username);
             pstmt.setString(2, password);
             pstmt.setString(3, fullName);
             pstmt.setString(4, email);
             pstmt.setString(5, gender);
             pstmt.setInt(6, phonenumber);
+            pstmt.setBoolean(7, isStudent);
+            pstmt.setString(8, isStudent ? yearAndCourse : null);
 
-            int affectedRows = pstmt.executeUpdate();
-            return affectedRows > 0;
+            return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
     }
-
+    public static ResultSet getUserByID(int userID) throws SQLException {
+        String sql = "SELECT * FROM users_tbl WHERE ID = ?";
+        Connection conn = ConnectDB.connect();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userID);
+        return stmt.executeQuery();
+    }
+    public static boolean doesUserExist(int userID) throws SQLException {
+        String sql = "SELECT ID FROM users_tbl WHERE ID = ?";
+        try (Connection conn = ConnectDB.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userID);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next();
+        }
+    }
 
 }
