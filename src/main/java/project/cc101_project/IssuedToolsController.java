@@ -36,14 +36,14 @@ public class IssuedToolsController {
     @FXML
     private void initialize() {
         // Auto-fetch tool info when Tool ID is entered
-        toolIdField.textProperty().addListener((obs, oldVal, newVal) -> {
+        toolIdField.textProperty().addListener((_, _, newVal) -> {
             if (!newVal.isEmpty()) {
                 fetchToolInfo(Integer.parseInt(newVal));
             }
         });
 
         // Auto-fetch student info when Student ID is entered
-        studentIdField.textProperty().addListener((obs, oldVal, newVal) -> {
+        studentIdField.textProperty().addListener((_, _, newVal) -> {
             if (!newVal.isEmpty()) {
                 try {
                     fetchStudentInfo(Integer.parseInt(newVal));
