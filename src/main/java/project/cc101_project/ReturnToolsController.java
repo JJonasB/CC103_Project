@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import project.cc101_project.sql.CurrentUser;
 import project.cc101_project.sql.IssueCRUD;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -25,6 +26,9 @@ public class ReturnToolsController {
     @FXML
     private void initialize() {
         // Disable return button until details are loaded
+        CurrentUser currentUser = CurrentUser.getInstance();
+        student_txtfld.setDisable(true);
+        student_txtfld.setText(String.valueOf(currentUser.getId()));
         returnToolsBTN.setDisable(true);
     }
 
