@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import project.cc101_project.sql.IssueCRUD;
 import project.cc101_project.sql.ToolsCRUD;
 import project.cc101_project.sql.UserCRUD;
+import project.cc101_project.sql.CurrentUser;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -35,18 +36,25 @@ public class IssuedToolsController {
     @FXML
     private void initialize() {
         // Auto-fetch tool info when Tool ID is entered
-        toolIdField.textProperty().addListener((obs, oldVal, newVal) -> {
+        toolIdField.textProperty().addListener((_, _, newVal) -> {
             if (!newVal.isEmpty()) {
                 fetchToolInfo(Integer.parseInt(newVal));
             }
         });
 
         // Auto-fetch student info when Student ID is entered
-        studentIdField.textProperty().addListener((obs, oldVal, newVal) -> {
+        studentIdField.textProperty().addListener((_, _, newVal) -> {
             if (!newVal.isEmpty()) {
-                fetchStudentInfo(Integer.parseInt(newVal));
+                try {
+                    fetchStudentInfo(Integer.parseInt(newVal));
+                } catch (NumberFormatException e) {
+                    System.out.println("BRUV");
+                }
             }
         });
+        studentIdField.setDisable(true);
+        CurrentUser currentUser = CurrentUser.getInstance();
+        studentIdField.setText(String.valueOf(currentUser.getId()));
     }
 
     private void fetchToolInfo(int toolID) {

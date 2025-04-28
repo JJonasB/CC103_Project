@@ -1,6 +1,5 @@
 package project.cc101_project;
 
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +21,7 @@ import java.util.ResourceBundle;
 public class ViewRecordController implements Initializable {
     @FXML private TableView<IssuedToolRecord> recordsTable;
     @FXML private TableColumn<IssuedToolRecord, Integer> colIssueID;
+    @FXML private TableColumn<IssuedToolRecord, Integer> colToolID;
     @FXML private TableColumn<IssuedToolRecord, String> colToolName;
     @FXML private TableColumn<IssuedToolRecord, String> colIssueDate;
     @FXML private TableColumn<IssuedToolRecord, String> colDueDate;
@@ -38,6 +38,7 @@ public class ViewRecordController implements Initializable {
 
     private void setupTableColumns() {
         colIssueID.setCellValueFactory(new PropertyValueFactory<>("issueID"));
+        colToolID.setCellValueFactory(new PropertyValueFactory<>("toolID"));
         colToolName.setCellValueFactory(new PropertyValueFactory<>("toolName"));
         colIssueDate.setCellValueFactory(new PropertyValueFactory<>("issueDate"));
         colDueDate.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
@@ -54,7 +55,7 @@ public class ViewRecordController implements Initializable {
     }
 
     private void setupSearchFilter() {
-        Issue_txtfld.textProperty().addListener((obs, oldVal, newVal) -> {
+        Issue_txtfld.textProperty().addListener((_, _, newVal) -> {
             if (newVal.isEmpty()) {
                 loadRecords();
             } else {
@@ -77,7 +78,7 @@ public class ViewRecordController implements Initializable {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // This will print the error details to the console
+            e.printStackTrace();
         }
     }
 }
