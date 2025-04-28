@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import project.cc101_project.sql.CurrentUser;
+import project.cc101_project.sql.IssueCRUD;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class HomepageController {
     @FXML private Label welcomeText;
@@ -19,11 +21,18 @@ public class HomepageController {
 
     @FXML
     public void initialize() {
-        // Load current user data
-        CurrentUser currentUser = CurrentUser.getInstance();
-        IDLabel.setText(String.valueOf(currentUser.getId()));
-        fullNameLabel.setText(currentUser.getFullName());
-        IsStudentLabel.setText(currentUser.isStudent() ? "Yes" : "No");
+        try {
+            // Load current user data
+            CurrentUser currentUser = CurrentUser.getInstance();
+            IDLabel.setText(String.valueOf(currentUser.getId()));
+            fullNameLabel.setText(currentUser.getFullName());
+            IsStudentLabel.setText(currentUser.isStudent() ? "Yes" : "No");
+
+            // Update overdue statuses on homepage load
+            IssueCRUD.updateOverdueStatus();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

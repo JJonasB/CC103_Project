@@ -34,7 +34,7 @@ public class SignUpController {
         yearAndCourse.setVisible(false);
 
         // Add listener to student toggle group
-        isStudent.selectedToggleProperty().addListener((obs, oldVal, newVal) -> {
+        isStudent.selectedToggleProperty().addListener((_, _, _) -> {
             boolean isStudent = yesRadio.isSelected();
             yearAndCourse.setVisible(isStudent);
             if (!isStudent) yearAndCourse.clear();

@@ -32,6 +32,7 @@ public class IssuedToolsController {
     @FXML private Text studentName_ans;
     @FXML private Text studentCourse_ans;
 
+
     @FXML
     private void initialize() {
         // Auto-fetch tool info when Tool ID is entered
@@ -44,7 +45,11 @@ public class IssuedToolsController {
         // Auto-fetch student info when Student ID is entered
         studentIdField.textProperty().addListener((obs, oldVal, newVal) -> {
             if (!newVal.isEmpty()) {
-                fetchStudentInfo(Integer.parseInt(newVal));
+                try {
+                    fetchStudentInfo(Integer.parseInt(newVal));
+                } catch (NumberFormatException e) {
+                    System.out.println("BRUV");
+                }
             }
         });
     }
