@@ -1,9 +1,21 @@
-Currently this project is in-progress.
-A lot of features are hard to implement and the code is a mess but it works.
+# QCU Equipment Monitoring System
 
-A lot of searching and trial and error within. And some features are working yet there's some things I still do not understand.
-Note that all of the functionality is being handled by 1 person and the javafx interface was created by only 2 people.
-The more progress that this project do, the more that I need to review how and why this works.
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![JavaFX](https://img.shields.io/badge/JavaFX-19-lightgrey)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
 
-As I write this it's 4/28/2025 12:51 AM, currently most of the features are still missing and needs fixing, like the homepage should not have some features when they're students.
-Anyways this became a log but since it's private, it's fine for now. I have a headache from doing this for too long.
+A desktop application for managing tools, tracking issuances, and handling maintenance reports at Quezon City University (QCU).
+
+## Technologies Used
+
+- **Frontend**: JavaFX (FXML for UI design)
+- **Backend**: Java 17+
+- **Database**: MySQL
+- **Dependencies**: JDBC, JavaFX SDK
+
+## Installation
+
+### Prerequisites
+- Java 17+
+- MySQL Server 8.0+
+- JavaFX SDK (compatible with your IDE)
