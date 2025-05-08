@@ -5,7 +5,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
 
 A desktop application for managing tools, tracking issuances, and handling maintenance reports at Quezon City University (QCU).
-
+(Still WIP lots of bugs, For Finals)
 ## Technologies Used
 
 - **Frontend**: JavaFX (FXML for UI design)
