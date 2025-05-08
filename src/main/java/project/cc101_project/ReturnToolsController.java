@@ -25,7 +25,6 @@ public class ReturnToolsController {
 
     @FXML
     private void initialize() {
-        // Disable return button until details are loaded
         CurrentUser currentUser = CurrentUser.getInstance();
         student_txtfld.setDisable(true);
         student_txtfld.setText(String.valueOf(currentUser.getId()));
