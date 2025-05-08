@@ -65,6 +65,7 @@ public class IssueCRUD {
         }
         return records;
     }
+
     // Fetch issuance details
     public static ResultSet getIssueDetails(int toolID, int studentID) throws SQLException {
         String sql = "SELECT i.IssueID, t.ToolName, u.`Full Name`, i.IssueDate, i.DueDate " +
